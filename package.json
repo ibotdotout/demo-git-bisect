@@ -1,0 +1,17 @@
+{
+  "name": "demo-git-bisect",
+  "version": "1.0.0",
+  "description": "Show how to use git bisect for dubugging",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "ibotdotout",
+  "license": "MIT",
+  "dependencies": {
+	  "chai": "^3.5.0",
+	  "express": "^4.13.4",
+	  "mocha": "^2.4.5",
+	  "supertest": "^1.2.0"
+  }
+}
