@@ -1,11 +1,8 @@
 var path = require('path')
 var hello = require(path.resolve('app/controller/hello'))
+var hi = require(path.resolve('app/controller/hi'))
 var express = require('express')
 var app = express()
-
-var hi = (req, res) => {
-  res.send('hi')
-}
 
 app.get('/', hello)
 
