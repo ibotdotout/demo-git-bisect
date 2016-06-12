@@ -24,6 +24,16 @@ describe('APP Test', function () {
 		})
 	})
 
+  it('should say bisect in /bisect path', function(done) {
+    api.get('/bisect')
+      .expect(200)
+      .end(function (err, res) {
+        if (err) return done(err)
+        expect(res.text).to.be.equal('bisect')
+        done()
+		})
+	})
+
 })
 
 
