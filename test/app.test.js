@@ -14,7 +14,7 @@ describe('APP Test', function () {
 		})
 	})
 
-  it('should hi in /docker path', function(done) {
+  it('should hi in /hi path', function(done) {
     api.get('/hi')
       .expect(200)
       .end(function (err, res) {
