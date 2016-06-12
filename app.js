@@ -8,6 +8,10 @@ app.get('/', hello)
 
 app.get('/hi', hi)
 
+app.get('/bisect', (req, res) => {
+  res.send('bisect')
+})
+
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!');
 });
