@@ -4,7 +4,7 @@ var server = require('../app')
 var api = supertest(server)
 
 describe('APP Test', function () {
-  it('should hello in / path', function(done) {
+  it('should say hello in / path', function(done) {
     api.get('/')
       .expect(200)
       .end(function (err, res) {
@@ -14,7 +14,7 @@ describe('APP Test', function () {
 		})
 	})
 
-  it('should hi in /hi path', function(done) {
+  it('should say hi in /hi path', function(done) {
     api.get('/hi')
       .expect(200)
       .end(function (err, res) {
