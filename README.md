@@ -41,14 +41,31 @@ You just tell `git bisect` where are you (HEAD) and where is the good commit tha
 `git bisect` will checkout the middle commit then you tell it is `Good` or `Bad` commit, after that move to next one,  
 The end, You will know where commit is the cause of error.
 
-### Demo debuggig with `git besect`
+### Demo debuggig with `git bisect`
+
+Prepare dependencise
 
 ```sh
+# Run on docker container
+$ docker build -t node-demo-bisect .
+$ docker run -it --rm node-demo-bisect sh
+
+# Run on your machine, you should have node v6 and npm
+$ npm install
+```
+Debug via `git bisect` with `npm test` script
+
+```sh
+# On your machine / docker node-demo-bisect
+
 $ git bisect start HEAD 81e2c7f # tell git bisect where to start and where is good commit
 $ git bisect run npm test # ues git bisect for automated check the status of commit via test script
 $ git show # you found the commit that is caues of error, use `git show` to display how its different from previous commit
 $ git bisect reset # end of git bisect, back to HEAD
+
+$ exit # for exit the docker container
 ```
+
 You should found the commit `b57d4ba Refactoring hi to controller` is cause of error.
 
 ```js
